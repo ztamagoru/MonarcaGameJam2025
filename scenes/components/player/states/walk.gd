@@ -1,6 +1,7 @@
 extends State
 
 func enter():
+	player.headbob_player.speed_scale = player.walking_head_bop
 	print(name)
 
 func update(_delta):
@@ -30,4 +31,4 @@ func physics_update(_delta):
 		return
 
 func exit():
-	pass
+	player.headbob_player.speed_scale = 0
