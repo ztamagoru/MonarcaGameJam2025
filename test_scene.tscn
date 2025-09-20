@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgdyxro40dagc"]
+
+[ext_resource type="PackedScene" uid="uid://lo8hel43hvuk" path="res://scenes/components/player/player.tscn" id="1_ia1lp"]
+[ext_resource type="Texture2D" uid="uid://bn1xv3dve857g" path="res://icon.svg" id="2_sasra"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coq8p"]
+albedo_texture = ExtResource("2_sasra")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2nij2"]
+material = SubResource("StandardMaterial3D_coq8p")
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cbxl"]
+size = Vector3(30, 1, 30)
+
+[node name="TestScene" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ia1lp")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_2nij2")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_7cbxl")
