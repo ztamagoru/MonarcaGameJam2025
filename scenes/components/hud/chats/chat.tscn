@@ -1,0 +1,353 @@
+[gd_scene load_steps=7 format=3 uid="uid://tvm8wnxrxl0a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejxpt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2wit"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nixh7"]
+bg_color = Color(0, 0, 0, 0.2509804)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_7irwy"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cv7s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_h8xgc"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="chat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ejxpt")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_t2wit")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nixh7")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Mom"
+label_settings = SubResource("LabelSettings_7irwy")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 4
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Message" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message2" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message2"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message2/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message3" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message3"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message3/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message4" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message4"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message4/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message5" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message5"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message5/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message6" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message6"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message6/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message7" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message7"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message7/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message8" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message8"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message8/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message9" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message9"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message9/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message10" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message10"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message10/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message11" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message11"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message11/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message12" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message12"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message12/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message13" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message13"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message13/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
+
+[node name="Message14" type="PanelContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message14"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Message14/MarginContainer"]
+layout_mode = 2
+text = "hi sweetie"
+label_settings = SubResource("LabelSettings_h8xgc")
