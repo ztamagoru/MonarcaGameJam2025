@@ -2,27 +2,21 @@
 
 [ext_resource type="Script" uid="uid://tjnxgfs3mv6u" path="res://scripts/scenes/components/hud/chats/message.gd" id="1_5gxia"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cv7s"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gxia"]
+bg_color = Color(0.08235294, 0.53333336, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
-[sub_resource type="LabelSettings" id="LabelSettings_h8xgc"]
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_8iogr"]
 
 [node name="Message" type="PanelContainer"]
 custom_minimum_size = Vector2(30, 0)
 size_flags_horizontal = 8
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_4cv7s")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5gxia")
 script = ExtResource("1_5gxia")
-message = "?"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -33,5 +27,5 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
-text = "hi sweetie"
-label_settings = SubResource("LabelSettings_h8xgc")
+text = "?"
+label_settings = SubResource("LabelSettings_8iogr")

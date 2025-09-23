@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://tvm8wnxrxl0a"]
+[gd_scene load_steps=12 format=3 uid="uid://tvm8wnxrxl0a"]
 
 [ext_resource type="PackedScene" uid="uid://cfm85pufixc24" path="res://scenes/components/hud/chats/message.tscn" id="1_t2wit"]
 
@@ -42,6 +42,20 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt7sh"]
+bg_color = Color(0.08235294, 0.53333336, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jtr7"]
+bg_color = Color(0.8980392, 0.89411765, 0.91764706, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01ihu"]
 bg_color = Color(0.08235294, 0.53333336, 1, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -146,3 +160,16 @@ message_position = "Bottom"
 [node name="Message5" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/messages" instance=ExtResource("1_t2wit")]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dt7sh")
+
+[node name="Message6" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/messages" instance=ExtResource("1_t2wit")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3jtr7")
+message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+sender = "Other"
+
+[node name="Message7" parent="PanelContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/messages" instance=ExtResource("1_t2wit")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_01ihu")
+message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"

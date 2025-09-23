@@ -1,8 +1,7 @@
-@tool
 extends PanelContainer
 
 @export_category("Message Settings")
-@export var message : String = "insert message here"
+@export_multiline var message : String = "insert message here"
 @export_enum("Player", "Other") var sender : String = "Player"
 @export_enum("Only", "Top", "Middle", "Bottom") var message_position : String = "Only"
 
@@ -12,8 +11,17 @@ extends PanelContainer
 const corner_radius : int = 15
 const shorter_corner_radius : int = 3
 
+const max_width : int = 250
+
 func _ready():
 	message_label.text = message
+	
+	await get_tree().process_frame
+	
+	var natural_width = message_label.get_minimum_size().x
+	
+	message_label.custom_minimum_size.x = max_width if natural_width > max_width else 0
+	message_label.autowrap_mode = TextServer.AUTOWRAP_WORD if natural_width > max_width else TextServer.AUTOWRAP_OFF
 	
 	var sb := StyleBoxFlat.new()
 	var ls := LabelSettings.new()
