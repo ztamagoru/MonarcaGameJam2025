@@ -1,7 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgdyxro40dagc"]
+[gd_scene load_steps=10 format=3 uid="uid://dgdyxro40dagc"]
 
 [ext_resource type="PackedScene" uid="uid://lo8hel43hvuk" path="res://scenes/components/player/player.tscn" id="1_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://bn1xv3dve857g" path="res://icon.svg" id="2_sasra"]
+[ext_resource type="Shader" uid="uid://8qlpex5u2uvx" path="res://shaders/ps1_models.gdshader" id="4_2nij2"]
+[ext_resource type="Shader" uid="uid://c5yp0mdolu46p" path="res://shaders/ps1_post_process.gdshader" id="4_coq8p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_coq8p"]
+render_priority = 0
+shader = ExtResource("4_2nij2")
+shader_parameter/albedo_texture = ExtResource("2_sasra")
+shader_parameter/texture_tile = Vector2(1.75, 2)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+shader_parameter/affine_weight = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coq8p"]
 albedo_texture = ExtResource("2_sasra")
@@ -15,6 +26,11 @@ size = Vector3(30, 1, 30)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7cbxl"]
 size = Vector3(30, 1, 30)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pr8v"]
+shader = ExtResource("4_coq8p")
+shader_parameter/viewport_size = Vector2(1280, 960)
+shader_parameter/virtual_resolution = Vector2(320, 240)
+
 [node name="TestScene" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ia1lp")]
@@ -23,8 +39,24 @@ size = Vector3(30, 1, 30)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("ShaderMaterial_coq8p")
 mesh = SubResource("BoxMesh_2nij2")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_7cbxl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_8pr8v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.4080157, -2.8030965)
+light_energy = 11.988
+shadow_enabled = true
