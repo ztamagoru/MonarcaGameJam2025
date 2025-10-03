@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgdyxro40dagc"]
+[gd_scene load_steps=11 format=3 uid="uid://dgdyxro40dagc"]
 
 [ext_resource type="PackedScene" uid="uid://lo8hel43hvuk" path="res://scenes/components/player/player.tscn" id="1_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://bn1xv3dve857g" path="res://icon.svg" id="2_sasra"]
 [ext_resource type="Shader" uid="uid://8qlpex5u2uvx" path="res://shaders/ps1_models.gdshader" id="4_2nij2"]
 [ext_resource type="Shader" uid="uid://c5yp0mdolu46p" path="res://shaders/ps1_post_process.gdshader" id="4_coq8p"]
+[ext_resource type="PackedScene" uid="uid://bioy4srtfvvox" path="res://assets/meshes/test/french_bulldog_psx.glb" id="5_2nij2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_coq8p"]
 render_priority = 0
@@ -60,3 +61,6 @@ grow_vertical = 2
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.4080157, -2.8030965)
 light_energy = 11.988
 shadow_enabled = true
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("5_2nij2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.167158, 0.23726988, 1.4351273)
